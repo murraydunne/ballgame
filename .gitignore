@@ -3,3 +3,6 @@
 
 #I don't think the temp directory is important either
 /Temp/*
+
+#Don't want .suo
+*.suo
