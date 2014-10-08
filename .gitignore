@@ -1,0 +1,5 @@
+#ignore the object directory, as it is part of the build
+/obj/*
+
+#I don't think the temp directory is important either
+/Temp/*
