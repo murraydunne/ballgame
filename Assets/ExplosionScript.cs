@@ -17,9 +17,10 @@ public class ExplosionScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-		gameObject.collider2D.isTrigger = true;
+
+
         createTime = Time.fixedTime;
-		gameObject.collider2D.isTrigger = false;
+		
         startScale = new Vector3(minSize, minSize, 0.0f);
         endScale = new Vector3(maxSize, maxSize, 0.0f);
 
@@ -46,7 +47,6 @@ public class ExplosionScript : MonoBehaviour
 
         if(collision.gameObject.tag == "Player")
         {
-
 			Vector2 temp = new Vector2(collision.gameObject.transform.position.x-gameObject.transform.position.x,1);
             collision.gameObject.rigidbody2D.AddForce(temp * magnitude);
 			gameObject.collider2D.isTrigger = true;
