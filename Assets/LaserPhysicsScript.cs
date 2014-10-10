@@ -18,6 +18,7 @@ public class LaserPhysicsScript : MonoBehaviour
     void Update()
     {
         transform.position += Heading * speed;
+		Debug.Log ("wat");
     }
 
     void Remove()

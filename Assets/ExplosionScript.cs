@@ -9,7 +9,7 @@ public class ExplosionScript : MonoBehaviour
     private const float minSize = 0.01f;
     private const float maxSize = 1.0f;
 
-    private const float magnitude = 400.0f;
+    public const float magnitude = 400.0f;
 
     private Vector3 startScale;
     private Vector3 endScale;
@@ -17,8 +17,9 @@ public class ExplosionScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+		gameObject.collider2D.isTrigger = true;
         createTime = Time.fixedTime;
-
+		gameObject.collider2D.isTrigger = false;
         startScale = new Vector3(minSize, minSize, 0.0f);
         endScale = new Vector3(maxSize, maxSize, 0.0f);
 
@@ -35,15 +36,22 @@ public class ExplosionScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		Debug.Log ("rip");
         ((CircleCollider2D)gameObject.collider2D).radius = Mathf.Lerp(minSize, maxSize, (Time.fixedTime - createTime) / duration);
         gameObject.transform.localScale = Vector3.Lerp(startScale, endScale, (Time.fixedTime - createTime) / duration);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.name.Equals("Ball"))
+		Debug.Log ("rip");
+        if(collision.gameObject.tag == "Player")
         {
-            GameObject.Find("Ball").rigidbody2D.AddRelativeForce(collision.contacts[0].normal * magnitude);
+			Debug.Log("TEST");
+			Vector2 temp = new Vector2(collision.gameObject.transform.position.x-gameObject.transform.position.x,1);
+            collision.gameObject.rigidbody2D.AddForce(temp * magnitude);
+			gameObject.collider2D.isTrigger = true;
+		
         }
     }
+	
 }
