@@ -36,17 +36,17 @@ public class ExplosionScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		Debug.Log ("rip");
+
         ((CircleCollider2D)gameObject.collider2D).radius = Mathf.Lerp(minSize, maxSize, (Time.fixedTime - createTime) / duration);
         gameObject.transform.localScale = Vector3.Lerp(startScale, endScale, (Time.fixedTime - createTime) / duration);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-		Debug.Log ("rip");
+
         if(collision.gameObject.tag == "Player")
         {
-			Debug.Log("TEST");
+
 			Vector2 temp = new Vector2(collision.gameObject.transform.position.x-gameObject.transform.position.x,1);
             collision.gameObject.rigidbody2D.AddForce(temp * magnitude);
 			gameObject.collider2D.isTrigger = true;
