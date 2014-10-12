@@ -9,7 +9,7 @@ public class ExplosionScript : MonoBehaviour
     private const float minSize = 0.01f;
     private const float maxSize = 1.0f;
 
-    public const float magnitude = 400.0f;
+    public float magnitude = 300.0f;
 
     private Vector3 startScale;
     private Vector3 endScale;

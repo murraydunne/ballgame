@@ -5,8 +5,8 @@ public class LaserPhysicsScript : MonoBehaviour
 {
     public Vector3 Heading { get; set; }
 
-    public const float hitPlayerMagnitude = 470.0f;
-    public const float speed = 0.22f;
+    public float hitPlayerMagnitude = 400.0f;
+    public float speed = 0.25f;
 
     // Use this for initialization
     void Start()
