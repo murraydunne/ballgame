@@ -45,7 +45,7 @@ public class ExplosionScript : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
 
-        if(collision.gameObject.tag == "Player")
+		if(collision.gameObject.tag == "Player" || collision.gameObject.tag.Contains("Phys"))
         {
 			Vector2 temp = new Vector2(collision.gameObject.transform.position.x-gameObject.transform.position.x,1);
             collision.gameObject.rigidbody2D.AddForce(temp * magnitude);

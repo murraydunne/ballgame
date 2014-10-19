@@ -34,7 +34,7 @@ public class LaserScript : MonoBehaviour
 
             Quaternion laserRotation = Quaternion.AngleAxis(angle, new Vector3(0, 0, 1));
 
-            Vector3 laserStartPos = ballPos + laserVector.normalized * (((CircleCollider2D)GameObject.Find("Ball").collider2D).radius + 0.01f);
+			Vector3 laserStartPos = ballPos + laserVector.normalized * (((CircleCollider2D)GameObject.Find("Ball").collider2D).radius + 0.01f);
 
             GameObject laser = (GameObject)Instantiate(laserPrefab, laserStartPos, laserRotation);
 

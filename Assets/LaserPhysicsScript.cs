@@ -27,17 +27,17 @@ public class LaserPhysicsScript : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name.Contains("Absorb"))
+		if (collision.gameObject.name.Contains("Absorb") || collision.gameObject.tag.Contains("Absorb") )
         {
             Destroy(gameObject);
         }
-        else if(collision.gameObject.name.Contains("Explode"))
+		else if(collision.gameObject.name.Contains("Explode") || collision.gameObject.tag.Contains("Explode"))
         {
             GameObject explosion = (GameObject)Instantiate(Resources.Load("ExplosionPrefab"));
             explosion.transform.position = gameObject.transform.position;
             Destroy(gameObject);
         }
-        else if(collision.gameObject.name.Contains("Reflect"))
+		else if(collision.gameObject.name.Contains("Reflect") || collision.gameObject.tag.Contains("Reflect"))
         {
             Heading = Vector3.Reflect(Heading, collision.contacts[0].normal);
 
