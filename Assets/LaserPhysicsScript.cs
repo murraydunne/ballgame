@@ -11,7 +11,7 @@ public class LaserPhysicsScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Invoke("Remove", 4.0f);
+		Destroy (gameObject, 4);
     }
 
     // Update is called once per frame
@@ -20,10 +20,7 @@ public class LaserPhysicsScript : MonoBehaviour
         transform.position += Heading * speed;
     }
 
-    void Remove()
-    {
-        Destroy(gameObject);
-    }
+  
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -47,7 +44,7 @@ public class LaserPhysicsScript : MonoBehaviour
 
             if (Heading.x < 0)
             {
-                angle += 180.0f;
+				angle += 180.0f;
             }
 
             Quaternion laserRotation = Quaternion.AngleAxis(angle, new Vector3(0, 0, 1));
@@ -64,7 +61,7 @@ public class LaserPhysicsScript : MonoBehaviour
 			Vector2 forceApplied = new Vector2((Heading.x + toBall.x) * colModifier,(Heading.y + toBall.y) * colModifier);
 
 
-            GameObject.Find("Ball").rigidbody2D.AddForce(Heading * hitPlayerMagnitude);
+            GameObject.Find("Ball").rigidbody2D.AddForce(Heading.normalized * hitPlayerMagnitude);
             Destroy(gameObject);
         }
     }

@@ -46,9 +46,11 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\BeamRotation.cs" />
      <Compile Include="Assets\ButtonScript.cs" />
      <Compile Include="Assets\DoorScript.cs" />
      <Compile Include="Assets\ExplosionScript.cs" />
+     <Compile Include="Assets\HoverBeam.cs" />
      <Compile Include="Assets\LaserPhysicsScript.cs" />
      <Compile Include="Assets\LaserScript.cs" />
      <Compile Include="Assets\easyFollow.cs" />
