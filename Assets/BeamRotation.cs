@@ -4,21 +4,22 @@ using System.Collections;
 public class BeamRotation : MonoBehaviour {
 
 	// Use this for initialization
-
+	public LayerMask ballMask;
 	private float radius = 0.38f;
+	private float width = 2.05f;
 	private float sign = -1;
 	void Start () {
 
-		Vector2 rayOri = new Vector3 (transform.position.x + 1.025f, transform.position.y);
+		Vector2 rayOri = new Vector3 (transform.position.x + width/2, transform.position.y);
 		Vector2 rayDir = transform.right;
 
 		//Physics.Raycast (rayOri, rayDir, hit, 2.05f);
 
-		if (!Physics2D.Raycast(rayOri,rayDir,2.05f)) {
+		if (!Physics2D.Raycast(rayOri,rayDir,width,ballMask)) {
 
 			Quaternion rot = new Quaternion(0,0,transform.rotation.z,1);
-			rayOri.x += transform.right.x * 1.025f;
-			rayOri.y += transform.right.y * 1.025f;
+			rayOri.x += transform.right.x * width/2;
+			rayOri.y += transform.right.y * width/2;
 			//Vector2 pos = rayOri + transform.right*2.05f;
 
 			GameObject next = (GameObject)Instantiate(gameObject,rayOri,rot);

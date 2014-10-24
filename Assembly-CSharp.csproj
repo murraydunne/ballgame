@@ -53,7 +53,9 @@
      <Compile Include="Assets\HoverBeam.cs" />
      <Compile Include="Assets\LaserPhysicsScript.cs" />
      <Compile Include="Assets\LaserScript.cs" />
+     <Compile Include="Assets\TurretScript.cs" />
      <Compile Include="Assets\easyFollow.cs" />
+     <Compile Include="Assets\turretLaserScript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
