@@ -14,8 +14,8 @@ TagManager:
   Builtin Layer 5: 
   Builtin Layer 6: 
   Builtin Layer 7: 
-  User Layer 8: 
-  User Layer 9: 
+  User Layer 8: Hamstercolliding
+  User Layer 9: Hamster
   User Layer 10: 
   User Layer 11: 
   User Layer 12: 
@@ -42,4 +42,12 @@ TagManager:
   - name: Default
     userID: 0
     uniqueID: 0
+    locked: 0
+  - name: Foreground
+    userID: 1
+    uniqueID: 2956316709
+    locked: 0
+  - name: Background
+    userID: 2
+    uniqueID: 277627381
     locked: 0
